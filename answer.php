@@ -2,6 +2,24 @@
 $num1 = $_GET['num1'];
 $num2 = $_GET['num2'];
 $operator = $_GET['operator'];
+switch ($operator) {
+    case 'addition':
+        $result = $num1 + $num2;
+        $op = ' + ';
+        break;
+    case 'subtraction':
+        $result = $num1 - $num2;
+        $op = ' - ';
+        break;
+    case 'multiplication':
+        $result = $num1 * $num2;
+        $op = ' * ';
+        break;
+    case 'division':
+        $result = $num1 / $num2;
+        $op = ' / ';
+        break;
+}
 ?>
 
 <!DOCTYPE html>
@@ -13,25 +31,7 @@ $operator = $_GET['operator'];
 </head>
 <body>
     <h1>計算結果</h1>
-    <?php switch ($operator) {
-        case 'addition':
-            $result = $num1 + $num2;
-            echo $num1 . ' + ' . $num2 . ' = ' . $result;
-            break;
-        case 'subtraction':
-            $result = $num1 - $num2;
-            echo $num1 . ' - ' . $num2 . ' = ' . $result;
-            break;
-        case 'multiplication':
-            $result = $num1 * $num2;
-            echo $num1 . ' * ' . $num2 . ' = ' . $result;
-            break;
-        case 'division':
-            $result = $num1 / $num2;
-            echo $num1 . ' / ' . $num2 . ' = ' . $result;
-            break;
-    }
-    ?>
+    <?= $num1 . $op . $num2 . ' = ' . $result ?>
     <p><a href="calc_form.php">戻る</a></p>
 </body>
 </html>
